@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+{% if registed %}
+    该用户已经被注册：{{ name }}
+    <form action="login.html" method="post">
+        {% csrf_token %}
+    <input type="submit" name = "viewResult" class="view" id = "recommend1" value="跳转登录">
+    </form>
+{% else %}
+    <form action="login.html" method="post">
+        {% csrf_token %}
+        注册成功:{{ name }}
+    <a>跳转登录</a>
+    </form>
+{% endif %}
+</body>
+
+</html>

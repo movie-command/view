@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/firstPage.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <style>.div-a{ float:left;width:50%;border:1px }
+    .div-b{ float:left;width:50%;border:1px }</style>
+    <style type="text/css">
+        #heard,#search,#box,#footer/*中间用，隔开*/
+        {
+         width:990px;
+        }
+    #heard
+    {
+        /*width:990px;*/
+        height:90px;
+        background:#CCC;
+        margin:0 auto;
+    }
+    #search
+    {
+        /*width:990px;*/
+        height:65px;
+        background:#f5f5fa;
+       margin:10px auto;
+    }
+#box
+{
+       /*width:990px;*/
+    margin:10px auto;
+}
+#box #left/*注意两个属性之间要有空格隔开*/
+{
+    width:100%;
+    height:1500px;
+    background-image: url("1.jpg");
+    float:left;
+        margin-right:10px;
+        display:inline;
+}
+#box #right
+{
+    width:0%;
+    height:700px;
+    float:right;
+}
+#footer
+{
+       /*width:990px;*/
+    height:100px;
+    background:#ccc;
+    margin:0 auto;
+    clear:both;/*清除浮动对背景的影响*/
+}
+    </style>
+</head>
+<body>
+{% if not user %}
+<a href="/registerView/">注册/登录</a>
+{% else %}
+    <div id="heard"><strong>您已经登录,推荐系统欢迎您</strong>
+        <li><a href='/recommand1/'>猜你喜欢</a></li>
+        <strong>
+            <a style="float: right " href="/accounts/login/">注销登录</a>
+        </strong>
+    </div>
+    <div id = "search">
+      <ul class="nav nav-tabs nav-justified" id="index">
+        <li class="active"><a href="#tab0" data-toggle="tab">动作</a></li>
+        <li><a href="#tab1" data-toggle="tab">恐怖</a></li>
+        <li><a href="#tab2" data-toggle="tab">喜剧</a></li>
+        <li><a href="#tab3" data-toggle="tab">动画</a></li>
+        <li><a href="#tab4" data-toggle="tab">科幻</a></li>
+        <li><a href="#tab5" data-toggle="tab">犯罪</a></li>
+        <li><a href="#tab6" data-toggle="tab">爱情</a></li>
+        <li><a href="#tab7" data-toggle="tab">剧情</a></li>
+          <li><a href="#tab8" data-toggle="tab">热映榜</a></li>
+          <li><a href="#tab9" data-toggle="tab">新品榜</a></li>
+      </ul>
+    </div>
+    <div id="box">
+<div class="div-a"><marquee behavior="scroll" direction="left">吕思佳，曾莉惠，郭俊劭制作</marquee></div>
+<div class="div-b"><marquee behavior="scroll" direction="left">吕思佳，曾莉惠，郭俊劭制作</marquee></div>
+    <div id = "left">
+    <div class="tab-content" id="tab1">
+        <a>动作</a>
+        <ul class="figures_lists">
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/08/05/QngcKVI1u_1501923437.jpg" width=100px height=150px alt="龙之战">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="龙之战">龙之战</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/08/03/aKmVMitX2_1501727925.jpg" width=100px height=150px alt="猎凶风河谷">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="猎凶风河谷">猎凶风河谷</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/07/31/FZlzoU4eG_1501491746.jpg" width=100px height=150px alt="战狼2">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="战狼2">战狼2</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/07/07/bAbsjBdO0_1499398013.jpg" width=100px height=150px alt="蜘蛛侠：英雄归来">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="蜘蛛侠：英雄归来">蜘蛛侠：英雄归来</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/06/26/GLYtsxVKu_1498467754.jpg" width=100px height=150px alt="极盗车神">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="极盗车神">极盗车神</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/06/21/ckuReCq50_1498027201.jpg" width=100px height=150px alt="变形金刚5">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="变形金刚5">变形金刚5</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/06/05/gTacpcTlC_1496650202.jpg" width=100px height=150px alt="新木乃伊">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="新木乃伊">新木乃伊</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/05/22/9vy3D8lmn_1495436968.jpg" width=100px height=150px alt="银河守卫队">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="银河守卫队">银河守卫队</a>
+    				</strong>
+		  </li>
+            </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2001/03/18/uNUMTkgRh_1270994497.jpg" width=100px height=150px alt="拍档侦探">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="拍档侦探">拍档侦探</a>
+    				</strong>
+		  </li>
+        </ul>
+
+</div>
+
+<hr width=90% align="left"/>
+    <div class="tab-content" id="tab2">
+        <a>恐怖</a>
+        <ul class="figures_lists">
+
+         <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/06/10/fULH3EVIF_1497074622.jpg" width=100px height=150px alt="异形：契约">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="异形：契约">异形：契约</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/04/20/JsyMeznYY_1492678532.jpg" width=100px height=150px alt="难以忘怀">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="难以忘怀">难以忘怀</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/10/09/yc8uHXKwR_1476006628.jpg" width=100px height=150px alt="但丁密码">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="但丁密码">但丁密码</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/09/28/gJIlodjVI_1475055096.jpg" width=100px height=150px alt="京城81号2">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="京城81号2">京城81号2</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/09/16/8oWoDikIK_1474008422.jpg" width=100px height=150px alt="老九门">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="老九门">老九门</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/09/01/eU6wWNX3k_1472704276.jpg" width=100px height=150px alt="罪恶之夜/罪恶之奔">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="罪恶之夜/罪恶之奔">罪恶之夜/罪恶之奔</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/22/t6on4LIfh_1471858330.jpg" width=100px height=150px alt="猿人作战">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="猿人作战">猿人作战</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/18/p4Yn0B1ZM_1471488667.jpg" width=100px height=150px alt="致命魅惑">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="致命魅惑">致命魅惑</a>
+    				</strong>
+		  </li>
+            <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/09/01/u0DOvQ2b4_1472718802.jpg" width=100px height=150px alt="猎艳">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="猎艳">猎艳</a>
+    				</strong>
+		  </li>
+        </ul>
+      </div>
+
+
+<hr width=90% align="left"/>
+    <div class="tab-content" id="tab3">
+        <a>喜剧</a>
+        <ul class="figures_lists">
+
+                 <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/08/03/45faZwmC1_1501729270.jpg" width=100px height=150px alt="嗨翻姐妹行">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="嗨翻姐妹行">嗨翻姐妹行</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/07/15/LJ4UtheNV_1500089084.jpg" width=100px height=150px alt="绝世高手">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="绝世高手">绝世高手</a>
+
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/07/01/NYIVlg8oR_1498891788.jpg" width=100px height=150px alt="疯狂房子">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="疯狂房子">疯狂房子 </a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/07/01/CAZQ4J3O7_1498891323.jpg" width=100px height=150px alt="赛车总动员3">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="赛车总动员3">赛车总动员3</a>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/06/10/d9cnV5ahJ_1497075342.jpg" width=100px height=150px alt="52赫兹，我爱你">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="52赫兹，我爱你">52赫兹，我爱你</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/05/19/UldTyMxfI_1495183923.jpg" width=100px height=150px alt="加勒比海盗5">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="加勒比海盗5">加勒比海盗5</a>
+
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/04/25/fKBLfuA9h_1493112237.jpg" width=100px height=150px alt="麻烦家族">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="麻烦家族">麻烦家族</a>
+
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/02/16/bELocEPBM_1487238630.jpg" width=100px height=150px alt="拳斗">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="拳斗">拳斗</a>
+
+    				</strong>
+		  </li>
+            <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1994/04/24/SdJLrduKJ_1277464771.jpg" width=100px height=150px alt="志明与春娇">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="志明与春娇">志明与春娇</a>
+
+    				</strong>
+		  </li>
+        </ul>
+      </div>
+
+<hr width=90% align="left"/>
+    <div class="tab-content" id="tab4">
+        <a>动画</a>
+        <ul class="figures_lists">
+
+
+                 <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/05/26/k68wstlnV_1495770399.jpg" width=100px height=150px alt="哆啦A梦">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="哆啦A梦">哆啦A梦</a>
+
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/05/22/9vy3D8lmn_1495436968.jpg" width=100px height=150px alt="银河守卫队">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="银河守卫队">银河守卫队</a>
+
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/03/01/TDkLul3pL_1488360579.jpg" width=100px height=150px alt="乐高大电影">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="乐高大电影">乐高大电影</a>
+
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/09/23/mScnNKAdq_1474617976.jpg" width=100px height=150px alt="红海龟">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="红海龟">红海龟</a>
+
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/23/sBoUAPs27_1471945336.jpg" width=100px height=150px alt="冰川时代5">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="冰川时代5">冰川时代5</a>
+
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/22/jrA3ONrAm_1471858983.jpg" width=100px height=150px alt="魔弦传说">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="魔弦传说">魔弦传说</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/22/ffeEUi1mk_1471857832.jpg" width=100px height=150px alt="海洋之歌">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="海洋之歌">海洋之歌</a>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/22/8ySbdGaJI_1471857564.jpg" width=100px height=150px alt="诺亚方舟漂流记">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="诺亚方舟漂流记">诺亚方舟漂流记</a>
+    				</strong>
+		  </li>
+            <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2001/03/18/8qsGsbV58_1284976062.jpg" width=100px height=150px alt="正义联盟">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="正义联盟">正义联盟</a>
+    				</strong>
+		  </li>
+
+        </ul>
+      </div>
+
+<hr width=90% align="left"/>
+    <div class="tab-content" id="tab5">
+        <a>科幻</a>
+        <ul class="figures_lists">
+
+        <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/22/UCF2oTxaM_1471857319.jpg" width=100px height=150px alt="世界之外">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="世界之外">世界之外</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/23/oixbe9LZ3_1471945754.jpg" width=100px height=150px alt="忍者神龟2">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="忍者神龟2">忍者神龟2</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/23/50pIMYAue_1471945825.jpg" width=100px height=150px alt="X战警:天启">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="X战警:天启">X战警:天启</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1996/04/13/YJjAYIL4O_1281284079.jpg" width=100px height=150px alt="全城戒备">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="全城戒备">全城戒备</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2003/03/08/fU5LxgXhX_1269092074.jpg" width=100px height=150px alt="新铁血战士">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="新铁血战士">新铁血战士</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1996/04/13/kL2otp4Vz_1274665880.jpg" width=100px height=150px alt="基因怪物">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="基因怪物">基因怪物</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2003/03/08/hnK8bZFjt_1267703143.jpg" width=100px height=150px alt="未来警察">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="未来警察">未来警察</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/09/01/GgylbwOnf_1472721907.jpg" width=100px height=150px alt="热浴盆时光机">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="热浴盆时光机">热浴盆时光机</a>
+    				</strong>
+		  </li>
+        <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/09/01/mTTryOPxw_1472719283.jpg" width=100px height=150px alt="Area Q.">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="Area Q.">Area Q.</a>
+    				</strong>
+		  </li>
+        </ul>
+      </div>
+
+<hr width=90% align="left"/>
+    <div class="tab-content" id="tab6">
+        <a>犯罪</a>
+        <ul class="figures_lists">
+
+        <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/22/vNgaX4hhj_1471854359.jpg" width=100px height=150px alt="肖申克的救赎">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="肖申克的救赎">肖申克的救赎</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/16/juQ7qrB6C_1471319929.jpg" width=100px height=150px alt="监控者">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="监控者">监控者</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/22/3Jut6yh1U_1471859441.jpg" width=100px height=150px alt="红色警戒999">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="红色警戒999">红色警戒999</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/23/rUbwGJPXI_1471944927.jpg" width=100px height=150px alt="寒战2">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="寒战2">寒战2</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/23/GKZyJWfap_1471946317.jpg" width=100px height=150px alt="乌龙特工">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="乌龙特工">乌龙特</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/31/8hfWXofCO_1472637324.jpg" width=100px height=150px alt="二流警探">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="二流警探">二流警探</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2003/03/08/GseNnCN1G_1279850217.jpg" width=100px height=150px alt="保卫者">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="保卫者">保卫者</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2004/03/02/dwvtZOEhG_1212824216.jpg" width=100px height=150px alt="不朽">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="不朽">不朽</a>
+    				</strong>
+		  </li>
+        <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1995/04/19/dEd7g6t8h_1293605733.jpg" width=100px height=150px alt="波斯王子">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="波斯王子">波斯王子</a>
+    				</strong>
+		  </li>
+        </ul>
+      </div>
+
+<hr width=90% align="left"/>
+    <div class="tab-content" id="tab7">
+        <a>爱情</a>
+        <ul class="figures_lists">
+
+        <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/05/27/fPtWLg9jl_1495853047.jpg" width=100px height=150px alt="夏天19岁的肖像">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="夏天19岁的肖像">夏天19岁的肖像</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/05/26/mz51QJXym_1495777594.jpg" width=100px height=150px alt="29 +  1">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="29 + 1">29 + 1 </a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/05/11/ILP784HHU_1494486070.jpg" width=100px height=150px alt="小情书">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="小情书">小情书</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/04/27/LGGEUwGk3_1493279735.jpg" width=100px height=150px alt="春娇救志明">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="春娇救志明">春娇救志明</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/02/16/13TSc79bP_1487237531.jpg" width=100px height=150px alt="欢乐好声音">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="欢乐好声音">欢乐好声音</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/12/15/ti0Q7w4VJ_1481795971.jpg" width=100px height=150px alt="附属美丽">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="附属美丽">附属美丽</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/12/06/nvbtCW7ut_1481017724.jpg" width=100px height=150px alt="少年巴比伦">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="少年巴比伦">少年巴比伦</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/11/11/e2imBFOeb_1478857579.jpg" width=100px height=150px alt="夏威夷之恋">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="夏威夷之恋">夏威夷之恋</a>
+    				</strong>
+		  </li>
+        <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/31/QVI1M6eZu_1472635218.jpg" width=100px height=150px alt="山楂树之恋">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="山楂树之恋">山楂树之恋</a>
+    				</strong>
+		  </li>
+        </ul>
+      </div>
+
+<hr width=90% align="left"/>
+    <div class="tab-content" id="tab8">
+        <a>剧情</a>
+        <ul class="figures_lists">
+                <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/08/03/DBTj7Ql6P_1501728970.jpg" width=100px height=150px alt="表情奇幻冒险">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="表情奇幻冒险">表情奇幻冒险 </a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/07/31/FTKV3NMSu_1501492290.jpg" width=100px height=150px alt="父 子 雄 兵">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="父 子 雄 兵">父 子 雄 兵</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/07/15/oeMQ6NpTy_1500088654.jpg" width=100px height=150px alt="深夜食堂2：ZB食堂">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="深夜食堂2：ZB食堂">深夜食堂2：ZB食堂</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/07/15/fOmXt3CfR_1500087702.jpg" width=100px height=150px alt="麦克白夫人">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="麦克白夫人">麦克白夫人</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/06/29/E0d1L1xiM_1498719357.jpg" width=100px height=150px alt="神偷奶爸3">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="神偷奶爸3">神偷奶爸3</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/06/26/YnM5LKXge_1498462928.jpg" width=100px height=150px alt="冈仁波齐">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="冈仁波齐">冈仁波齐</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/06/21/4Z4gQb0eU_1498026759.jpg" width=100px height=150px alt="我不做大哥好多年">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="我不做大哥好多年">我不做大哥好多年</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2017/05/16/J9EESfkZP_1494916176.jpg" width=100px height=150px alt="公社">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="公社">公社</a>
+    				</strong>
+		  </li>
+        <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/08/22/qNf8Gsk64_1471860434.jpg" width=100px height=150px alt="赏金猎人">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="赏金猎人">赏金猎人</a>
+    				</strong>
+		  </li>
+        </ul>
+      </div>
+    <hr width=90% align="left"/>
+    <div class="tab-content" id="tab8">
+        <a>热映榜</a>
+        <ul class="figures_lists">
+                <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2001/03/18/uNUMTkgRh_1270994497.jpg" width=100px height=150px alt="拍档侦探">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="拍档侦探">拍档侦探</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1991/05/10/ULtZcBX7W_1263548329.jpg" width=100px height=150px alt="罗马情缘">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="罗马情缘">罗马情缘</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2016/09/02/FlyIughlh_1472781824.jpg" width=100px height=150px alt="食客2：泡菜战争">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="食客2：泡菜战争">食客2：泡菜战争</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1998/04/03/2wxloXBsb_1265593017.jpg" width=100px height=150px alt="等待超人">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="等待超人">等待超人</a>
+    				</strong>
+		  </li>
+          <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1994/04/24/hOiCla7X5_1253319132.jpg" width=100px height=150px alt="巴黎谍影">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="巴黎谍影">巴黎谍影</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1996/04/13/Lc3fXHsYv_1255771910.jpg" width=100px height=150px alt="分手信">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="分手信">分手信</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2002/03/13/F6wJb45wJ_1258889900.jpg" width=100px height=150px alt="疯狂的心">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="疯狂的心">疯狂的心</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1996/04/13/oAOM2bPqP_1263906732.jpg" width=100px height=150px alt="群雄逐鹿2">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="群雄逐鹿2">群雄逐鹿2</a>
+    				</strong>
+		  </li>
+            <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1996/04/13/7Qd942g3d_1255749494.jpg" width=100px height=150px alt="致命弯道3">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="致命弯道3">致命弯道3</a>
+    				</strong>
+		  </li>
+
+        </ul>
+      </div>
+    <hr width=90% align="left"/>
+    <div class="tab-content" id="tab9">
+        <a>新片榜</a>
+        <ul class="figures_lists">
+        <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1991/05/10/7Arb66SE7_1261499302.jpg" width=100px height=150px alt="诸神之战">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="诸神之战">诸神之战</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2004/03/02/mmaGVvH7s_1267259208.jpg" width=100px height=150px alt="动物复仇记">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="动物复仇记">动物复仇记</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1995/04/19/mesm3i52F_1269049074.jpg" width=100px height=150px alt="火龙对决">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="火龙对决">火龙对决</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1997/04/08/WTYNudvB1_1259945013.jpg" width=100px height=150px alt="布鲁克林警察">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="布鲁克林警察">布鲁克林警察</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1995/04/19/lURVKUIR9_1254211449.jpg" width=100px height=150px alt="杀出狂人镇">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="杀出狂人镇">杀出狂人镇</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2001/03/18/uNUMTkgRh_1270994497.jpg" width=100px height=150px alt="拍档侦探">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="拍档侦探">拍档侦探</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1992/05/04/ugZIxfBV5_1264386705.jpg" width=100px height=150px alt="量子启示录">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="量子启示录">量子启示录</a>
+    				</strong>
+		  </li>
+<li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/1996/04/13/OGrkfbY22_1260069468.jpg" width=100px height=150px alt="大兵小将">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="大兵小将">大兵小将</a>
+    				</strong>
+		  </li>
+        <li class="list_item" data-trigger-class="list_item_hover">
+    				<a target="_blank" class="figure" tabindex="-1">
+    					<img src="http://posters.imdb.cn/upload/2006/02/20/mclAxusqN_1264510853.jpg" width=100px height=150px alt="情人节">
+    				</a>
+    				<strong class="figure_title">
+    					<a href="http://www.imdb.com/title/tt0114709/?ref_=nv_sr_1" target="_blank" title="情人节">情人节</a>
+    				</strong>
+		  </li>
+        </ul>
+      </div>
+
+{% endif %}
+</div>
+</div>
+</body>
+</html>

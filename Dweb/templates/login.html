@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <link href="/static/css/style.css" rel='stylesheet' type='text/css' />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!--webfonts-->
+        <!--//webfonts-->
+
+</head>
+<body background ="1.jpg">
+</div>
+    <div class="main">
+        <div class="header" >
+            <h1>Login or Create a Free Account!</h1>
+        </div>
+        <p>欢迎使用推荐系统，如果已有账户可直接登录，没有账户可注册 </p>
+            <form action="/register/" method="POST">
+                <ul class="media-middle">
+                    <h2>推荐系统注册:</h2>
+                    <li>
+                        <input type="text" name="username"   placeholder="Username" required/>
+                        <a href="#" class="icon ticker"> </a>
+                        <div class="clear"> </div>
+                    </li>
+                    {% csrf_token %}
+                    <li>
+                        <input type="text" name="email"  placeholder="Email" required/>
+                        <a href="#" class="icon ticker"> </a>
+                        <div class="clear"> </div>
+                    </li>
+                    <li>
+                        <input type="text" name="sex"  placeholder="sex" required/>
+                        <a href="#" class="icon ticker"> </a>
+                        <div class="clear"> </div>
+                    </li>
+                    <li>
+                        <input type="text" name="birthday"  placeholder="birthday" required/>
+                        <a href="#" class="icon ticker"> </a>
+                        <div class="clear"> </div>
+                    </li>
+                    <li>
+                        <input type="password" name="password"   placeholder="password" required/>
+                        <a href="#" class="icon into"> </a>
+                        <div class="clear"> </div>
+                    </li>
+                    <li>
+                        <input type="password"   placeholder="password" required/>
+                        <a href="#" class="icon into"> </a>
+                        <div class="clear"> </div>
+                    </li>
+                    <input type="submit" onClick="myFunction()" value="创建用户">
+                        <div class="clear"> </div>
+                </ul>
+            </form>
+            <form action="/login/" method="post">
+                <ul class="right-form">
+                    {% csrf_token %}
+                    <h3>推荐系统登录:</h3>
+                    <div>
+                        <li><input type="text" name="username"  placeholder="Username" required/></li>
+                        <li> <input type="password" name="password"  placeholder="Password" required/></li>
+                            <input type="submit" onClick="myFunction()" value="登录" >
+                    </div>
+                    <div class="clear"> </div>
+                </ul>
+                <div class="clear"> </div>
+
+            </form>
+
+        </div>
+
+
+</body>
+</html>
+
+<!-- 前台代码 -->

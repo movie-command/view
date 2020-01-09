@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <style type = "text/css">
+        #left
+        {width:50%;height:1000px;float:left;}
+        #right
+        {width:50%;background:#9dc75f;height:1000px;float:right;}
+    </style>
+</head>
+<body>
+<div id="left" >
+<form>
+    用户信息推荐:
+<br></br>
+    {%  for like in data %}
+        <p>{{ like }}</p>
+    {%  endfor %}
+</form>
+</div>
+<div id="right">
+</div>
+</body>
+</html>
